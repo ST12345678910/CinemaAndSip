@@ -70,6 +70,48 @@
   -ms-animation: fadeIn 1s;
 }
 
+#navbarSearch {
+  margin: 1rem;
+}
+
+#navbar-menu {
+  font-weight: 500;
+  margin-right: 0.2rem;
+
+}
+
+#navbar-drop {
+  margin-right: 0.2rem;
+}
+
+.navbar-item:hover .navbar-dropdown {
+  display: block;
+}
+
+#dropdown-categories {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+#categories-button {
+  margin-top: 2rem;
+}
+
+#categories-list {
+  padding-right: 4.5rem;
+  font-weight: 700;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+#footer {
+  margin-top: 30rem;
+  padding-top: 0.5rem;
+  padding-bottom: 1.5rem;
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;

@@ -5,12 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CinemaAndSip V1</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+  <script src="https://kit.fontawesome.com/def4d34cce.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body class="has-background-dark">
+
+<!-- navbar -->
+<nav class="navbar" role="navigation" aria-label="dropdown navigation">
+  <div class="navbar-menu">
+
+    <!-- searchbar; if we want one, have it on left side or next to dropdown? -->
+    <div>
+      <input class="input is-rounded" id="navbarSearch" type="text" placeholder="Search">
+    </div>
+      
+    <!-- Dropdown menu in navbar for quick navigation through site -->
+    <div class="navbar-end">
+      <div class="navbar-item has-dropdown">
+        <a class="navbar-link" id="navbar-menu">Quickview</i></a>
+        
+        <!-- navbar burger for mobile -->
+        <!-- <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a> -->
+        <div class="navbar-dropdown is-right" id="navbar-drop">
+          <a href="#suggestionBox" class="navbar-item">
+            Suggested Pairings
+          </a>
+          <a href="#getStartedBtn" class="navbar-item">
+            Flick or Beverage?
+          </a>
+          <hr class="navbar-divider">
+          <div class="navbar-item">
+            Contact Us
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
 <div id="titleBox" class="container-fluid">
 <div class="box is-size-1 is-size-2-mobile is-family-monospace has-text-weight-bold">
-  <h1 id="centerMaintitle">Cinema & Sip</h1>
+  <h1 id="centerMaintitle"><i class="fa-solid fa-film"></i> Cinema & Sip <i class="fa-solid fa-whiskey-glass"></i></h1>
   <p class="is-size-4 is-size-7-mobile" id="titleDescription">Find the perfect pairing of movie and beverage</p>
 </div>
 
@@ -31,7 +70,7 @@
     </div>
   </div>
 <br><br>
-  <button class="js-modal-trigger button is-info is-large is-rounded" data-target="modal-js-movies">
+  <button class="js-modal-trigger button is-info is-large is-rounded" data-target="modal-js-movies" id="getStartedBtn">
     Get Started
   </button>
   
@@ -44,7 +83,51 @@
       </header>
       <section class="modal-card-body">
         <!-- Content ... -->
-        <p>Testing</p>
+        <input class="input" id="movieSearch" type="text" placeholder="Type Your Movie or Movie Category">
+        <!-- dropdown menu for user choosing a movie category -->
+        <div class="dropdown" id="dropdown-categories">
+          <div class="dropdown-trigger">
+            <button class="button" id="categories-list" aria-haspopup="true" aria-controls="dropdown-menu">
+              <span>Movie Categories</span>
+              <span class="icon is-small">
+                <i class="fas fa-angle-down" aria-hidden="true"></i>
+              </span>
+            </button>
+          </div>
+          <div class="dropdown-menu" id="dropdown-menu" role="menu">
+            <div class="dropdown-content">
+              <a href="#" class="dropdown-item">
+                Most Popular
+              </a>
+              <a href="#" class="dropdown-item">
+                Action
+              </a>
+              <a href="#" class="dropdown-item">
+                Adventure
+              </a>
+              <a href="#" class="dropdown-item">
+                Comedy
+              </a>
+              <a href="#" class="dropdown-item">
+                Drama
+              </a>
+              <a href="#" class="dropdown-item">
+                Documentary
+              </a>
+              <a href="#" class="dropdown-item">
+                Family
+              </a>
+              <a href="#" class="dropdown-item">
+                Horror
+              </a>
+              <a href="#" class="dropdown-item">
+                Romance
+              </a>
+              <a href="#" class="dropdown-item">
+                Science Fiction
+              </a>
+            </div>
+          </div>
       </section>
       <footer class="modal-card-foot">
         <button class="button is-success js-modal-trigger" data-target="modal-js-drinks">Next</button>
@@ -62,7 +145,42 @@
       </header>
       <section class="modal-card-body">
         <!-- Content ... -->
-        <p>Testing</p>
+        <input class="input" id="drinkSearch" type="text" placeholder="Type Your Drink or Drink Category">
+        <!-- dropdown menu for user choosing a drink category -->
+        <div class="dropdown" id="dropdown-categories">
+          <div class="dropdown-trigger">
+            <button class="button" id="categories-list" aria-haspopup="true" aria-controls="dropdown-menu">
+              <span>Drink Categories</span>
+              <span class="icon is-small">
+                <i class="fas fa-angle-down" aria-hidden="true"></i>
+              </span>
+            </button>
+          </div>
+          <div class="dropdown-menu" id="dropdown-menu" role="menu">
+            <div class="dropdown-content">
+              <a href="#" class="dropdown-item">
+                Gin
+              </a>
+              <a href="#" class="dropdown-item">
+                Vodka
+              </a>
+              <a href="#" class="dropdown-item">
+                Whiskey
+              </a>
+              <a href="#" class="dropdown-item">
+                Tequila
+              </a>
+              <a href="#" class="dropdown-item">
+                Rum
+              </a>
+              <a href="#" class="dropdown-item">
+                Wine
+              </a>
+              <a href="#" class="dropdown-item">
+                Beer
+              </a>
+            </div>
+          </div>
       </section>
       <footer class="modal-card-foot">
         <button class="button is-success js-modal-trigger" data-target="modal-js-drinks">Next</button>
@@ -70,9 +188,16 @@
       </footer>
     </div>
   </div>
-
-
 </div>
+
+<footer class="footer" id="footer">
+  <div class="content has-text-centered">
+    <p>
+      <strong><i class="fa-solid fa-film"></i> Cinema & Sip <i class="fa-solid fa-whiskey-glass"></i></strong> by Shaun, Zach, Chris & Sean
+    </p>
+  </div>
+</footer>
+
   <script src="assets/script.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </body>
